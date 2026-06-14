@@ -15,6 +15,7 @@ const HIGHLIGHTS = [
   'Animation & motion design',
   'Performance-first engineering',
 ];
+ 
 
 export default function About() {
   const { ref, inView } = useInView({ threshold: 0.2, triggerOnce: true });
