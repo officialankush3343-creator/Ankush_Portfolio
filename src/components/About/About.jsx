@@ -8,6 +8,7 @@ import { fadeUp, stagger } from '@/utils/animations';
 import { funFacts } from '@/data/achievementsData';
 import styles from './About.module.css';
 
+
 const HIGHLIGHTS = [
   'Production React & Next.js apps',
   'Design systems & accessibility',
