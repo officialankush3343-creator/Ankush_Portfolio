@@ -1,0 +1,156 @@
+.cta {
+  position: relative;
+  padding: clamp(80px, 12vw, 140px) 0;
+}
+
+.panel {
+  position: relative;
+  padding: clamp(40px, 7vw, 90px) clamp(24px, 5vw, 64px);
+  border-radius: var(--radius-xl);
+  background:
+    radial-gradient(circle at 0% 0%, rgba(124, 92, 255, 0.25), transparent 60%),
+    radial-gradient(circle at 100% 100%, rgba(0, 224, 255, 0.2), transparent 60%),
+    linear-gradient(180deg, #11111d 0%, #0a0a14 100%);
+  border: 1px solid var(--border-strong);
+  text-align: center;
+  overflow: hidden;
+  isolation: isolate;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6);
+}
+
+.panel::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg,
+    rgba(124, 92, 255, 0.6),
+    transparent 30%,
+    transparent 70%,
+    rgba(0, 224, 255, 0.6));
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: -1;
+}
+
+.glow1, .glow2 {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: -1;
+}
+.glow1 {
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, #7c5cff, transparent 70%);
+  top: -100px;
+  left: -100px;
+  opacity: 0.6;
+  animation: drift 14s ease-in-out infinite;
+}
+.glow2 {
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, #ff5ec4, transparent 70%);
+  bottom: -160px;
+  right: -120px;
+  opacity: 0.45;
+  animation: drift 18s ease-in-out infinite reverse;
+}
+@keyframes drift {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(40px, -30px); }
+}
+
+.grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 90% 80% at 50% 50%, #000 30%, transparent 90%);
+  -webkit-mask-image: radial-gradient(ellipse 90% 80% at 50% 50%, #000 30%, transparent 90%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px;
+  background: var(--bg-glass);
+  border: 1px solid var(--border-soft);
+  border-radius: 999px;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 22px;
+}
+.eyebrowDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-2);
+  box-shadow: 0 0 10px var(--accent-2);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2rem, 6vw, 4rem);
+  line-height: 1.05;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.sub {
+  max-width: 620px;
+  margin: 0 auto 28px;
+  color: var(--text-secondary);
+  font-size: clamp(1rem, 1.4vw, 1.125rem);
+  line-height: 1.6;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 28px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 999px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.btn:hover {
+  transform: translateY(-3px);
+}
+.btnPrimary {
+  background: var(--gradient-primary);
+  color: #06060b;
+  box-shadow: 0 14px 50px rgba(124, 92, 255, 0.45);
+}
+.btnPrimary:hover {
+  box-shadow: 0 20px 60px rgba(0, 224, 255, 0.45);
+}
+.btnGhost {
+  background: var(--bg-glass);
+  border: 1px solid var(--border-strong);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 14px;
+}

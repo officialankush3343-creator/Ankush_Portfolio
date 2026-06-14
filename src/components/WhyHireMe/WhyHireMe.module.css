@@ -1,0 +1,89 @@
+.why {
+  position: relative;
+}
+
+.header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 56px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  position: relative;
+  padding: 28px 24px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.012));
+  border: 1px solid var(--border-soft);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  overflow: hidden;
+  isolation: isolate;
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+.card:hover {
+  border-color: var(--border-strong);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+}
+
+.cardBg {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.12;
+  top: -60px;
+  right: -60px;
+  z-index: -1;
+  transition: opacity 0.4s ease;
+}
+.card:hover .cardBg {
+  opacity: 0.28;
+}
+
+.emoji {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  margin-bottom: 16px;
+  font-size: 26px;
+  transition: transform 0.45s var(--ease-out-soft);
+}
+.card:hover .emoji {
+  transform: scale(1.1) rotate(-6deg);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.desc {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.index {
+  position: absolute;
+  top: 20px;
+  right: 22px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+}

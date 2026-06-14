@@ -1,0 +1,145 @@
+.services {
+  position: relative;
+}
+
+.header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 56px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 22px;
+}
+
+.card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.012));
+  border: 1px solid var(--border-soft);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  overflow: hidden;
+  isolation: isolate;
+  transition: border-color 0.4s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.borderGlow {
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    var(--accent) 0%,
+    transparent 40%,
+    transparent 60%,
+    var(--accent) 100%
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.45s ease;
+  pointer-events: none;
+}
+
+.card:hover {
+  border-color: transparent;
+}
+.card:hover .borderGlow {
+  opacity: 1;
+}
+
+.cardInner {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transform: translateZ(20px);
+}
+
+.cardIndex {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+}
+
+.cardIcon {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  font-size: 24px;
+  margin-bottom: 4px;
+  transition: transform 0.45s var(--ease-out-soft);
+}
+.card:hover .cardIcon {
+  transform: scale(1.08) rotate(-5deg);
+}
+
+.cardTitle {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.35rem;
+  color: #fff;
+}
+
+.cardDesc {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 4px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--border-soft);
+}
+.bullets li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+.bulletDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.cardCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  width: fit-content;
+  transition: gap 0.3s ease, color 0.3s ease;
+}
+.cardCta:hover {
+  gap: 10px;
+  color: var(--accent-2);
+}

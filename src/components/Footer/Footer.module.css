@@ -1,0 +1,187 @@
+.footer {
+  position: relative;
+  padding: 70px 0 32px;
+  border-top: 1px solid var(--border-soft);
+  background: linear-gradient(180deg, transparent 0%, rgba(124, 92, 255, 0.05) 100%);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.glow {
+  position: absolute;
+  left: 50%;
+  bottom: -200px;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(124, 92, 255, 0.35), transparent 60%);
+  filter: blur(80px);
+  z-index: -1;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  text-align: center;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brandMark {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  background: var(--gradient-primary);
+  color: #06060b;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 16px;
+  box-shadow: 0 10px 30px rgba(124, 92, 255, 0.4);
+}
+
+.brandText {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #fff;
+}
+.brandDot {
+  color: var(--accent-2);
+}
+
+.tagline {
+  max-width: 560px;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.socials {
+  display: flex;
+  gap: 10px;
+}
+
+.socialBtn {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--bg-glass);
+  border: 1px solid var(--border-strong);
+  color: #fff;
+  font-size: 17px;
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+.socialBtn:hover {
+  background: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(124,92,255,0.5);
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  padding: 22px 0;
+  border-block: 1px solid var(--border-soft);
+}
+.navList {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 22px 32px;
+}
+.navList a {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+  position: relative;
+}
+.navList a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  height: 1px;
+  background: var(--gradient-primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s var(--ease-out-soft);
+}
+.navList a:hover {
+  color: #fff;
+}
+.navList a:hover::after {
+  transform: scaleX(1);
+}
+
+.bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.copy {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+.heart {
+  color: var(--accent-3);
+  display: inline-block;
+  animation: beat 1.4s ease-in-out infinite;
+}
+@keyframes beat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.25); }
+}
+
+.signature {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.toTop {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 80;
+  display: grid;
+  place-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--gradient-primary);
+  color: #06060b;
+  font-size: 22px;
+  box-shadow: 0 14px 40px rgba(124, 92, 255, 0.5);
+  transition: box-shadow 0.3s ease;
+}
+.toTop:hover {
+  box-shadow: 0 18px 50px rgba(0, 224, 255, 0.55);
+}
+
+@media (max-width: 520px) {
+  .bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}

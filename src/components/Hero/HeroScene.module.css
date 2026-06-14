@@ -1,0 +1,111 @@
+.scene {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  filter: drop-shadow(0 0 20px rgba(124, 92, 255, 0.18));
+}
+
+/* Drifting gradient orbs */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.4;
+  will-change: transform;
+}
+.orb1 {
+  width: 380px;
+  height: 380px;
+  top: 12%;
+  left: 8%;
+  background: radial-gradient(circle, #7c5cff 0%, transparent 65%);
+}
+.orb2 {
+  width: 420px;
+  height: 420px;
+  bottom: 8%;
+  right: 6%;
+  background: radial-gradient(circle, #00e0ff 0%, transparent 65%);
+}
+
+/* SVG shapes — keep them off the center where the portrait sits */
+.shape1,
+.shape2,
+.shape3,
+.shape4 {
+  position: absolute;
+  width: clamp(140px, 18vw, 240px);
+  height: clamp(140px, 18vw, 240px);
+  will-change: transform;
+  opacity: 0.85;
+}
+.shape1 {
+  top: 14%;
+  left: 6%;
+  animation: floatA 8s ease-in-out infinite;
+}
+.shape2 {
+  top: 18%;
+  right: 6%;
+  animation: floatB 9s ease-in-out infinite;
+}
+.shape3 {
+  bottom: 12%;
+  left: 8%;
+  animation: floatA 10s ease-in-out infinite reverse;
+  width: clamp(120px, 15vw, 200px);
+  height: clamp(120px, 15vw, 200px);
+}
+.shape4 {
+  bottom: 14%;
+  right: 10%;
+  animation: floatB 11s ease-in-out infinite reverse;
+  width: clamp(120px, 14vw, 190px);
+  height: clamp(120px, 14vw, 190px);
+}
+
+@keyframes floatA {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-14px) translateX(6px); }
+}
+@keyframes floatB {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(12px) translateX(-8px); }
+}
+
+/* Floating accent dots */
+.dot {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 16px currentColor;
+}
+.dotA {
+  top: 30%;
+  left: 22%;
+  color: var(--accent-2);
+  background: var(--accent-2);
+}
+.dotB {
+  top: 60%;
+  right: 24%;
+  color: var(--accent-3);
+  background: var(--accent-3);
+}
+.dotC {
+  bottom: 22%;
+  left: 40%;
+  color: var(--accent);
+  background: var(--accent);
+}
+
+/* Hide the smaller corner shapes on tight viewports so they don't clutter */
+@media (max-width: 720px) {
+  .shape3,
+  .shape4 {
+    display: none;
+  }
+}

@@ -1,0 +1,58 @@
+export const experiences = [
+  {
+    id: 1,
+    company: 'Stellar Studio',
+    position: 'Senior Frontend Developer',
+    duration: 'Jan 2024 — Present',
+    type: 'Full-time',
+    location: 'Remote',
+    accent: '#7c5cff',
+    responsibilities: [
+      'Lead a team of 4 frontend engineers shipping a flagship SaaS dashboard used by 30k+ users.',
+      'Architected the design system, reducing component build time by 60% across the org.',
+      'Migrated legacy CRA app to Next.js App Router — improved LCP from 4.2s to 0.9s.',
+    ],
+  },
+  {
+    id: 2,
+    company: 'PixelForge Agency',
+    position: 'Frontend UI/UX Developer',
+    duration: 'Mar 2022 — Dec 2023',
+    type: 'Full-time',
+    location: 'Bengaluru, India',
+    accent: '#00e0ff',
+    responsibilities: [
+      'Built award-winning marketing sites for 12+ clients in fintech, SaaS, and e-commerce.',
+      'Implemented advanced GSAP scroll choreography and Framer Motion micro-interactions.',
+      'Mentored 3 junior developers on modern React patterns and motion design fundamentals.',
+    ],
+  },
+  {
+    id: 3,
+    company: 'Nimbus Tech',
+    position: 'React Developer',
+    duration: 'Jul 2020 — Feb 2022',
+    type: 'Full-time',
+    location: 'Gurugram, India',
+    accent: '#ff5ec4',
+    responsibilities: [
+      'Developed reusable React components used across 5 internal products.',
+      'Owned the migration from class components to hooks, improving testability.',
+      'Built a real-time analytics widget with WebSockets handling 10k events/min.',
+    ],
+  },
+  {
+    id: 4,
+    company: 'Freelance',
+    position: 'Frontend Developer',
+    duration: 'Jan 2019 — Jun 2020',
+    type: 'Self-employed',
+    location: 'Remote',
+    accent: '#ffb547',
+    responsibilities: [
+      'Designed and built 20+ landing pages, portfolios, and small e-commerce stores.',
+      'Worked directly with founders to translate ideas into shippable interfaces.',
+      'Maintained an average 5★ rating across 30+ client engagements.',
+    ],
+  },
+];

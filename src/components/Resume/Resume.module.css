@@ -1,0 +1,232 @@
+.resume {
+  position: relative;
+}
+
+.wrap {
+  display: grid;
+  gap: 48px;
+  grid-template-columns: 1fr;
+  align-items: center;
+}
+
+@media (min-width: 960px) {
+  .wrap {
+    grid-template-columns: 1.1fr 1fr;
+    gap: 80px;
+  }
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.highlights {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 16px;
+  width: 100%;
+}
+
+.highlight {
+  padding: 16px 14px;
+  background: var(--bg-glass);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.highlightValue {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.highlightLabel {
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 22px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 999px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+.btn:hover {
+  transform: translateY(-2px);
+}
+.btnPrimary {
+  background: var(--gradient-primary);
+  color: #06060b;
+  box-shadow: 0 12px 36px rgba(124,92,255,0.4);
+}
+.btnGhost {
+  background: var(--bg-glass);
+  border: 1px solid var(--border-strong);
+  color: #fff;
+}
+
+.right {
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  aspect-ratio: 3 / 4;
+  padding: 28px 26px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(160deg, #11111d 0%, #06060b 100%);
+  border: 1px solid var(--border-strong);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.45s var(--ease-out-soft), box-shadow 0.45s ease;
+  isolation: isolate;
+}
+.card:hover {
+  transform: translateY(-8px) rotateZ(-1.5deg);
+  box-shadow: 0 40px 90px rgba(124, 92, 255, 0.3);
+}
+
+.cardGlow {
+  position: absolute;
+  inset: -40%;
+  background: conic-gradient(from 0deg, #7c5cff, #00e0ff, #ff5ec4, #7c5cff);
+  filter: blur(40px);
+  opacity: 0.18;
+  animation: spinSlow 10s linear infinite;
+  z-index: -1;
+}
+@keyframes spinSlow {
+  to { transform: rotate(360deg); }
+}
+
+.cardLabel {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  color: var(--accent-2);
+}
+
+.cardName {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  color: #fff;
+  margin-top: 8px;
+}
+
+.cardRole {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.cardList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: auto;
+  padding-top: 24px;
+  border-top: 1px dashed var(--border-soft);
+}
+.cardList li {
+  font-size: 12px;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}
+
+.cardCorner {
+  position: absolute;
+  bottom: 22px;
+  right: 22px;
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: var(--gradient-primary);
+  color: #06060b;
+  font-size: 22px;
+  box-shadow: 0 10px 30px rgba(124, 92, 255, 0.5);
+}
+
+/* Viewer */
+.viewerBackdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(4,4,8,0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  z-index: 200;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+
+.viewer {
+  position: relative;
+  width: min(900px, 100%);
+  height: min(90vh, 1100px);
+  background: #06060b;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.viewerFrame {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #fff;
+}
+
+.viewerClose {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 5;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(6,6,11,0.85);
+  border: 1px solid var(--border-strong);
+  color: #fff;
+  font-size: 18px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+.viewerClose:hover {
+  background: var(--accent);
+  transform: rotate(90deg);
+}
