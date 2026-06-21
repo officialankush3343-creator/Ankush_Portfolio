@@ -6,6 +6,7 @@ import CountUp from 'react-countup';
 import { FiCheck } from 'react-icons/fi';
 import { fadeUp, stagger } from '@/utils/animations';
 import { funFacts } from '@/data/achievementsData';
+import { formatYears, getYearsLabel } from '@/utils/experience';
 import styles from './About.module.css';
 
 
@@ -51,7 +52,7 @@ export default function About() {
               </div>
               <div className={styles.floatCard2}>
                 <div className={styles.floatStat}>
-                  <span className={styles.floatNum}>2.5+</span>
+                  <span className={styles.floatNum}>{getYearsLabel()}</span>
                   <span className={styles.floatLabel}>Years<br />Experience</span>
                 </div>
               </div>
@@ -74,16 +75,17 @@ export default function About() {
             </motion.h2>
 
             <motion.p className={styles.body} variants={fadeUp}>
-              I'm Ankush — a frontend developer with a designer's eye and an
-              animator's heart. For the last two and a half years, I've been turning Figma
-              files into living, breathing interfaces that load fast, feel
-              premium, and convert visitors into believers.
+              I'm Ankush — a Frontend Designer at DESIGNERSX with a designer's eye
+              and an animator's heart. For the last {formatYears()} years, I've been
+              turning Figma files into living, breathing interfaces that load fast,
+              feel premium, and convert visitors into believers.
             </motion.p>
             <motion.p className={styles.body} variants={fadeUp}>
               I specialise in React, Next.js, and the kind of motion design
-              that makes recruiters stop scrolling. Whether it's a high-stakes
-              SaaS dashboard or a quiet little portfolio, I bring the same
-              obsessive care to every line of code I ship.
+              that makes recruiters stop scrolling — shipping production work
+              across AI SaaS (Rexpt), healthcare (BrunoMD, Bruno Vision Care)
+              and e-commerce (Beauty Fashion Sales, Formoline) for clients
+              across geographies.
             </motion.p>
 
             <motion.ul className={styles.highlights} variants={fadeUp}>
@@ -100,7 +102,12 @@ export default function About() {
                 <div key={s.id} className={styles.stat}>
                   <span className={styles.statNum}>
                     {inView ? (
-                      <CountUp end={s.value} duration={2.4} suffix={s.suffix} />
+                      <CountUp
+                        end={s.value}
+                        duration={2.4}
+                        suffix={s.suffix}
+                        decimals={Number.isInteger(s.value) ? 0 : 1}
+                      />
                     ) : (
                       `0${s.suffix}`
                     )}

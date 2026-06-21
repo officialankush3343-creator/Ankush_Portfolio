@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { FiExternalLink, FiGithub, FiX } from 'react-icons/fi';
@@ -18,6 +18,31 @@ export default function Projects() {
     if (activeTag === 'All') return projects;
     return projects.filter((p) => p.tags.includes(activeTag));
   }, [activeTag]);
+
+  // Lock background scroll (body + Lenis smooth scroll) while modal is open,
+  // and close on Escape.
+  useEffect(() => {
+    if (!active) return undefined;
+    const prevOverflow = document.body.style.overflow;
+    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+    document.body.style.overflow = 'hidden';
+    if (scrollbarWidth > 0) {
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
+    }
+    window.__lenis?.stop?.();
+
+    const onKey = (e) => {
+      if (e.key === 'Escape') setActive(null);
+    };
+    window.addEventListener('keydown', onKey);
+
+    return () => {
+      document.body.style.overflow = prevOverflow;
+      document.body.style.paddingRight = '';
+      window.__lenis?.start?.();
+      window.removeEventListener('keydown', onKey);
+    };
+  }, [active]);
 
   return (
     <section id="projects" className={`section ${styles.projects}`}>
@@ -153,16 +178,18 @@ function ProjectModal({ project, onClose }) {
               rel="noreferrer"
               className={`${styles.modalBtn} ${styles.modalBtnPrimary}`}
             >
-              <FiExternalLink /> Live Demo
+              <FiExternalLink /> Visit Site
             </a>
-            <a
-              href={project.githubUrl}
-              target="_blank"
-              rel="noreferrer"
-              className={`${styles.modalBtn} ${styles.modalBtnGhost}`}
-            >
-              <FiGithub /> Source
-            </a>
+            {project.githubUrl && project.githubUrl !== '#' && (
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noreferrer"
+                className={`${styles.modalBtn} ${styles.modalBtnGhost}`}
+              >
+                <FiGithub /> Source
+              </a>
+            )}
           </div>
         </div>
       </motion.div>

@@ -3,101 +3,103 @@
  * Add a new entry here and it will automatically appear in the Projects section
  * with filtering, modal preview, and links.
  *
- * Required: id, title, description, tags, image (or imageGradient), liveUrl, githubUrl, year
+ * Required: id, title, description, tags, imageGradient, liveUrl, year
+ * Optional: longDescription, image, githubUrl (omit/empty hides the Code link), featured
  */
 export const projects = [
   {
-    id: 'aurora-finance',
-    title: 'Aurora Finance Dashboard',
+    id: 'rexpt-ai',
+    title: 'Rexpt — AI Receptionist',
     description:
-      'A premium fintech dashboard with real-time charts, animated transitions, and a glassmorphism UI built for high-frequency trading desks.',
+      'Marketing site for an AI voice agent that answers business calls 24/7, qualifies leads and books appointments in 32+ languages.',
     longDescription:
-      'Designed and built a high-performance trading dashboard with real-time WebSocket data, virtualized lists for 10k+ rows, animated chart transitions, and a fully customizable workspace. Lighthouse score 98+.',
-    tags: ['React', 'Next.js', 'Framer Motion', 'TypeScript'],
-    category: 'Web App',
-    image:
-      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80&auto=format&fit=crop',
+      'Led the front-end for Rexpt — a voice-AI receptionist that deploys in under 3 minutes. Built the marketing site with motion-rich sections, multilingual messaging, conversion-focused CTAs and tight Core Web Vitals. Trusted by 1,000+ small businesses across home services, professional services, real estate and hospitality.',
+    tags: ['Next.js', 'React', 'Framer Motion', 'CSS Modules'],
+    category: 'SaaS',
     imageGradient: 'linear-gradient(135deg, #7c5cff 0%, #00e0ff 100%)',
-    liveUrl: '#',
-    githubUrl: '#',
+    liveUrl: 'https://rxpt.ai/',
     year: 2025,
     featured: true,
   },
   {
-    id: 'nova-saas',
-    title: 'Nova SaaS Landing',
+    id: 'rexpt-app',
+    title: 'Rexpt — App',
     description:
-      'Award-worthy SaaS landing page with scroll-triggered 3D scenes, custom cursor, and pixel-perfect responsive layouts.',
+      'Web app for the Rexpt AI receptionist platform — agent setup, live call analytics and CRM integrations in a clean SaaS UI.',
     longDescription:
-      'A marketing site for an AI productivity SaaS featuring GSAP scroll choreography, R3F 3D hero, animated pricing toggle, and a sub-1s LCP on mobile.',
-    tags: ['Next.js', 'GSAP', 'Three.js', 'Framer Motion'],
-    category: 'Landing Page',
-    image:
-      'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=1200&q=80&auto=format&fit=crop',
-    imageGradient: 'linear-gradient(135deg, #ff5ec4 0%, #7c5cff 100%)',
-    liveUrl: '#',
-    githubUrl: '#',
-    year: 2025,
-    featured: true,
-  },
-  {
-    id: 'pulse-music',
-    title: 'Pulse — Music Streaming',
-    description:
-      'Spotify-inspired music streaming UI with animated waveforms, queue management, and a beautifully designed player.',
-    longDescription:
-      'A full music streaming UI with audio visualizers, drag-and-drop queue, animated transitions between views, and offline-first PWA support.',
-    tags: ['React', 'Redux', 'Tailwind', 'Framer Motion'],
+      'Designed and built the Rexpt operator app — onboarding, agent configuration, call recordings and analytics. Reusable React component library, responsive data tables, and CRM integrations (HubSpot, Zoho) wrapped in a polished, animation-first interface.',
+    tags: ['React', 'Next.js', 'JavaScript', 'CSS Modules'],
     category: 'Web App',
-    image:
-      'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=1200&q=80&auto=format&fit=crop',
-    imageGradient: 'linear-gradient(135deg, #00e0ff 0%, #ff5ec4 100%)',
-    liveUrl: '#',
-    githubUrl: '#',
-    year: 2024,
+    imageGradient: 'linear-gradient(135deg, #00e0ff 0%, #7c5cff 100%)',
+    liveUrl: 'https://app.rxpt.ai/',
+    year: 2025,
     featured: true,
   },
   {
-    id: 'lumen-portfolio',
-    title: 'Lumen Studio Portfolio',
+    id: 'rexpt-lp',
+    title: 'Rexpt — Product Landing',
     description:
-      'Creative agency portfolio with horizontal scrolling sections, magnetic interactions, and a Lenis-powered smooth scroll.',
-    tags: ['Next.js', 'GSAP', 'Lenis', 'CSS Modules'],
-    category: 'Portfolio',
-    image:
-      'https://images.unsplash.com/photo-1481487196290-c152efe083f5?w=1200&q=80&auto=format&fit=crop',
-    imageGradient: 'linear-gradient(135deg, #ffb547 0%, #ff5ec4 100%)',
-    liveUrl: '#',
-    githubUrl: '#',
+      'High-conversion landing page for Rexpt\'s AI virtual receptionist with scroll-driven storytelling and prominent CTAs.',
+    longDescription:
+      'A focused conversion landing built around the "85% of customers won\'t call back if they hit voicemail" insight — animated illustrations, social-proof blocks, testimonial counters and a sub-1s LCP across devices.',
+    tags: ['Next.js', 'Framer Motion', 'CSS Modules'],
+    category: 'Landing Page',
+    imageGradient: 'linear-gradient(135deg, #ff5ec4 0%, #7c5cff 100%)',
+    liveUrl: 'https://lp.rxpt.ai/',
+    year: 2025,
+    featured: true,
+  },
+  {
+    id: 'bruno-vision',
+    title: 'Bruno Vision Care',
+    description:
+      'Eye-care clinic site featuring Deseyne® contact lenses, services overview and patient resources in a calm medical UI.',
+    longDescription:
+      'Front-end build for Bruno Vision Care. Product showcase for Deseyne® contact lenses, services catalog, appointment touchpoints and a polished, trust-building design with accessibility-first forms and a mobile-first layout.',
+    tags: ['Next.js', 'React', 'CSS Modules'],
+    category: 'Healthcare',
+    imageGradient: 'linear-gradient(135deg, #00e0ff 0%, #25e599 100%)',
+    liveUrl: 'https://www.brunovisioncare.com/',
     year: 2024,
   },
   {
-    id: 'orbit-ecommerce',
-    title: 'Orbit — Fashion Store',
+    id: 'brunomd',
+    title: 'BrunoMD',
     description:
-      'E-commerce storefront with animated product galleries, AR try-on, and a buttery-smooth cart drawer.',
-    tags: ['Next.js', 'Tailwind', 'Framer Motion'],
+      'Medical practice site for Dr. Bruno — content-first layout with treatments, patient resources and a clean professional aesthetic.',
+    longDescription:
+      'Personal medical-practice presence for Dr. Bruno. Treatments overview, doctor profile, contact and patient resources — built mobile-first with crisp typography and a refined, content-led design.',
+    tags: ['Next.js', 'React', 'CSS Modules', 'Framer Motion'],
+    category: 'Healthcare',
+    imageGradient: 'linear-gradient(135deg, #25e599 0%, #00e0ff 100%)',
+    liveUrl: 'https://brunomd.com/',
+    year: 2024,
+  },
+  {
+    id: 'beauty-fashion',
+    title: 'Beauty Fashion Sales',
+    description:
+      'Retail storefront for unique beauty brands — curated catalog, animated product galleries and a polished discovery experience.',
+    longDescription:
+      'E-commerce front-end for Beauty Fashion Sales Group — "The Source for unique beauty brands." Filterable catalog, sticky cart, animated PDPs and a discovery-led layout designed to surface niche beauty labels to a B2C audience.',
+    tags: ['React', 'Next.js', 'CSS Modules'],
     category: 'E-Commerce',
-    image:
-      'https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1200&q=80&auto=format&fit=crop',
-    imageGradient: 'linear-gradient(135deg, #7c5cff 0%, #ffb547 100%)',
-    liveUrl: '#',
-    githubUrl: '#',
+    imageGradient: 'linear-gradient(135deg, #ff5ec4 0%, #ffb547 100%)',
+    liveUrl: 'https://www.beautyfashionsales.com/',
     year: 2024,
   },
   {
-    id: 'spark-blog',
-    title: 'Spark Editorial',
+    id: 'formoline',
+    title: 'Formoline IT',
     description:
-      'A literary publication with magazine-style layouts, reading progress, and beautiful typography-first design.',
-    tags: ['React', 'CSS Modules', 'Framer Motion'],
-    category: 'Editorial',
-    image:
-      'https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80&auto=format&fit=crop',
-    imageGradient: 'linear-gradient(135deg, #00e0ff 0%, #7c5cff 100%)',
-    liveUrl: '#',
-    githubUrl: '#',
-    year: 2023,
+      'Italian-market site for Formoline L112 weight-management supplements — localized product pages and Amazon checkout flow.',
+    longDescription:
+      'Front-end for Formoline\'s Italian storefront. Localized product pages for the L112 and L112 Extra weight-management range, brand storytelling and direct-to-Amazon affiliate purchase flow with a clean, trust-led aesthetic.',
+    tags: ['Next.js', 'React', 'Bootstrap', 'JavaScript'],
+    category: 'E-Commerce',
+    imageGradient: 'linear-gradient(135deg, #ffb547 0%, #25e599 100%)',
+    liveUrl: 'https://formoline.it/',
+    year: 2024,
   },
 ];
 

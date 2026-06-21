@@ -88,15 +88,17 @@ export default function ProjectCard({ project, index, onOpen }) {
           >
             <FiExternalLink /> Live
           </a>
-          <a
-            href={project.githubUrl}
-            target="_blank"
-            rel="noreferrer"
-            className={styles.cardLink}
-            onClick={(e) => e.stopPropagation()}
-          >
-            <FiGithub /> Code
-          </a>
+          {project.githubUrl && project.githubUrl !== '#' && (
+            <a
+              href={project.githubUrl}
+              target="_blank"
+              rel="noreferrer"
+              className={styles.cardLink}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <FiGithub /> Code
+            </a>
+          )}
         </div>
       </div>
     </motion.article>

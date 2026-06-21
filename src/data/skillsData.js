@@ -10,7 +10,7 @@ import {
 import {
   SiNextdotjs,
   SiRedux,
-  SiTailwindcss,
+  SiBootstrap,
   SiFramer,
   SiGreensock,
 } from 'react-icons/si';
@@ -31,7 +31,7 @@ export const skillCategories = [
     name: 'UI Development',
     description: 'Crafting design systems and pixel-perfect interfaces.',
     skills: [
-      { name: 'Tailwind CSS', level: 95, Icon: SiTailwindcss, color: '#38bdf8' },
+      { name: 'Bootstrap', level: 92, Icon: SiBootstrap, color: '#7952b3' },
       { name: 'Framer Motion', level: 92, Icon: SiFramer, color: '#ff5ec4' },
       { name: 'GSAP', level: 86, Icon: SiGreensock, color: '#88ce02' },
     ],
@@ -64,7 +64,7 @@ export const techMarquee = [
   { name: 'JavaScript', Icon: FaJsSquare, color: '#f7df1e' },
   { name: 'HTML5', Icon: FaHtml5, color: '#e34f26' },
   { name: 'CSS3', Icon: FaCss3Alt, color: '#1572b6' },
-  { name: 'Tailwind', Icon: SiTailwindcss, color: '#38bdf8' },
+  { name: 'Bootstrap', Icon: SiBootstrap, color: '#7952b3' },
   { name: 'Framer Motion', Icon: SiFramer, color: '#ff5ec4' },
   { name: 'GSAP', Icon: SiGreensock, color: '#88ce02' },
   { name: 'Redux', Icon: SiRedux, color: '#764abc' },

@@ -5,19 +5,20 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { FiDownload, FiEye, FiFileText, FiX } from 'react-icons/fi';
 import { fadeUp, stagger } from '@/utils/animations';
+import { getYearsLabel } from '@/utils/experience';
 import styles from './Resume.module.css';
 
 const RESUME_PATH = '/pdf/Ankush_New_Resume.pdf';
 
-const HIGHLIGHTS = [
-  { label: 'Years Experience', value: '2.5+' },
-  { label: 'Projects Shipped', value: '50+' },
-  { label: 'Specialty', value: 'Frontend' },
-];
-
 export default function Resume() {
   const [showViewer, setShowViewer] = useState(false);
   const { ref, inView } = useInView({ threshold: 0.2, triggerOnce: true });
+
+  const HIGHLIGHTS = [
+    { label: 'Years Experience', value: getYearsLabel() },
+    { label: 'Projects Shipped', value: '15+' },
+    { label: 'Specialty', value: 'Frontend' },
+  ];
 
   return (
     <section id="resume" className={`section ${styles.resume}`}>
@@ -95,7 +96,7 @@ export default function Resume() {
               <ul className={styles.cardList}>
                 <li>React · Next.js · Framer Motion</li>
                 <li>Design Systems · Accessibility</li>
-                <li>2.5+ years · 50+ projects</li>
+                <li>{getYearsLabel()} years · 15+ projects</li>
               </ul>
 
               <span className={styles.cardCorner} aria-hidden="true">

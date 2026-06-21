@@ -81,10 +81,10 @@ export default function Hero() {
           <TypingText
             className={styles.typing}
             phrases={[
-              'Frontend UI/UX Developer',
-              'React Specialist',
+              'Frontend Designer',
+              'React Developer',
               'Next.js Engineer',
-              'Animation Craftsman',
+              'UI Animation Craftsman',
             ]}
           />
         </motion.div>

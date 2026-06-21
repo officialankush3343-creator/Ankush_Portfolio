@@ -9,15 +9,16 @@
   align-items: center;
 }
 
+.left {
+  order: 2;
+}
+.right {
+  order: 1;
+}
+
 @media (min-width: 960px) {
   .grid {
     grid-template-columns: 1.1fr 1fr;
-  }
-  .left {
-    order: 2;
-  }
-  .right {
-    order: 1;
   }
 }
 

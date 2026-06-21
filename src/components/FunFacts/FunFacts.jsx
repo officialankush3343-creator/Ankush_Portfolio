@@ -24,7 +24,12 @@ export default function FunFacts() {
             <motion.div key={f.id} variants={fadeUp} className={styles.card}>
               <span className={styles.value}>
                 {inView ? (
-                  <CountUp end={f.value} duration={2.6} suffix={f.suffix} />
+                  <CountUp
+                    end={f.value}
+                    duration={2.6}
+                    suffix={f.suffix}
+                    decimals={Number.isInteger(f.value) ? 0 : 1}
+                  />
                 ) : (
                   `0${f.suffix}`
                 )}

@@ -1,4 +1,5 @@
 import { FiAward, FiBookOpen, FiStar, FiTrendingUp } from 'react-icons/fi';
+import { getYearsOfExperience } from '@/utils/experience';
 
 export const achievements = [
   {
@@ -70,9 +71,9 @@ export const achievements = [
 ];
 
 export const funFacts = [
-  { id: 1, value: 50, suffix: '+', label: 'Projects Completed' },
-  { id: 2, value: 30, suffix: '+', label: 'Happy Clients' },
-  { id: 3, value: 2.5, suffix: '+', label: 'Years Experience' },
+  { id: 1, value: 15, suffix: '+', label: 'Projects Shipped' },
+  { id: 2, value: 10, suffix: '+', label: 'Happy Clients' },
+  { id: 3, value: getYearsOfExperience(), suffix: '+', label: 'Years Experience' },
   { id: 4, value: 100, suffix: 'K', label: 'Lines of Code' },
 ];
 
